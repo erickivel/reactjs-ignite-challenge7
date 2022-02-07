@@ -1,0 +1,21 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.swiper_slide {
+  text-align: center;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper_slide img {
+  filter:brightness(0.35);
+}
