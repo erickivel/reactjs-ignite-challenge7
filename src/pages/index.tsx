@@ -19,7 +19,7 @@ export default function Home() {
   const textColor = useColorModeValue("gray.500", "gray.50");
 
   return mounted ? (
-    <>
+    <Box overflow="hidden">
       <Header />
 
       <Banner />
@@ -32,6 +32,6 @@ export default function Home() {
       </Flex>
 
       <ChooseContinent />
-    </>
+    </Box>
   ) : null;
 }

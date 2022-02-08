@@ -1,7 +1,15 @@
-.swiper {
+.mySwiper {
   width: 100%;
   height: 100%;
   cursor: pointer;
+}
+
+.mySwiper
+.swiper-button-next {
+  content: "";
+  height: 8px;
+  width: 8px;
+  color: red !important;
 }
 
 .swiper_slide {
@@ -18,4 +26,7 @@
 
 .swiper_slide img {
   filter:brightness(0.35);
+  z-index: -1;
 }
+
+

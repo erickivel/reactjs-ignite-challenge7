@@ -1,39 +1,100 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper";
-import { Box } from "@chakra-ui/react";
-import Image from "next/image";
+import { Pagination, Navigation } from "swiper";
+import { Box, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 import styles from './styles.module.css';
 
+import { ContinentCard } from "./ContinentCard";
+import NorthAmericaImg from '../../../public/images/NorthAmerica.jpg';
+import SouthAmericaImg from '../../../public/images/SouthAmerica.jpg';
+import AsiaImg from '../../../public/images/Asia.jpg';
+import AfricaImg from '../../../public/images/Africa.jpg';
 import EuropeImg from '../../../public/images/Europe.jpg';
-
-
+import OceaniaImg from '../../../public/images/Oceania.jpg';
 
 export function ChooseContinent() {
+  const [isLargerThan770] = useMediaQuery('(min-width: 770px)');
+
+  const ImageWidth = useBreakpointValue({
+    base: 375,
+    sm: 375,
+    md: 736,
+    lg: 960,
+    xl: 1240,
+    '2xl': 1240,
+  })
+
+  const ImageHeight = useBreakpointValue({
+    base: 250,
+    sm: 250,
+    md: 267,
+    lg: 350,
+    xl: 450,
+    '2xl': 450,
+  })
+
   return (
-    <Box mt="1.25rem" overflow="hidden">
-      <Swiper pagination={true} modules={[Pagination]} className={styles.swiper}>
+    <Box
+      mt="3.25rem"
+      mb="2.5rem"
+      mx="auto"
+      overflow="hidden"
+      w={ImageWidth}
+      h={ImageHeight}
+    >
+      <Swiper pagination={true} navigation={isLargerThan770} modules={[Pagination, Navigation]} className={styles.mySwiper}>
         <SwiperSlide className={styles.swiper_slide}>
-          <Image
-            src={EuropeImg}
-            alt="europe"
-            layout="fixed"
-            objectFit="cover"
-            width={124}
-            height={450}
+          <ContinentCard
+            continentName="América do Norte"
+            description="Possui a maior ilha do mundo"
+            link="North-america"
+            image={NorthAmericaImg}
           />
         </SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 2</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 3</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 4</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 5</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 6</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 7</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 8</SwiperSlide>
-        <SwiperSlide className={styles.swiper_slide}>Slide 9</SwiperSlide>
+        <SwiperSlide className={styles.swiper_slide}>
+          <ContinentCard
+            continentName="América do Sul"
+            description="Possui a floresta com maior biodiversidade"
+            link="South-america"
+            image={SouthAmericaImg}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={styles.swiper_slide}>
+          <ContinentCard
+            continentName="Ásia"
+            description="O maior continente"
+            link="Asia"
+            image={AsiaImg}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={styles.swiper_slide}>
+          <ContinentCard
+            continentName="África"
+            description="O continente com mais países"
+            link="Africa"
+            image={AfricaImg}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={styles.swiper_slide}>
+          <ContinentCard
+            continentName="Europa"
+            description="O continente mais antigo"
+            link="Europe"
+            image={EuropeImg}
+          />
+        </SwiperSlide>
+        <SwiperSlide className={styles.swiper_slide}>
+          <ContinentCard
+            continentName="Oceania"
+            description="O continente mais recente"
+            link="Oceania"
+            image={OceaniaImg}
+          />
+        </SwiperSlide>
       </Swiper>
-    </Box>
+    </Box >
   );
 }

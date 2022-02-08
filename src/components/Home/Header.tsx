@@ -1,5 +1,5 @@
 import { Flex, Switch, useColorMode, useMediaQuery, IconButton, useBreakpointValue } from "@chakra-ui/react";
-import { MoonIcon } from '@chakra-ui/icons';
+import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from "next/image";
 
 import DarkLogo from '../../public/images/Dark-Logo.svg';
@@ -24,7 +24,12 @@ export function Header() {
         </Flex>
       ) : (
         <Flex align="center" position="absolute" right="1rem">
-          <IconButton isActive={colorMode === 'dark' ? true : false} onClick={toggleColorMode} aria-label="Dark Mode" icon={<MoonIcon />} />
+          <IconButton
+            isActive={colorMode === 'dark' ? true : false}
+            onClick={toggleColorMode}
+            aria-label="Dark Mode"
+            icon={colorMode === 'dark' ? <SunIcon /> : <MoonIcon />}
+          />
         </Flex >
       )}
     </Flex>
