@@ -2,11 +2,11 @@ import { Box, Flex, Text, useColorModeValue, useMediaQuery } from "@chakra-ui/re
 import Image from "next/image";
 import { mode } from '@chakra-ui/theme-tools';
 
-import CocktailImg from '../../public/images/cocktail.svg';
-import BuildingImg from '../../public/images/building.svg';
-import EarthImg from '../../public/images/earth.svg';
-import MuseumImg from '../../public/images/museum.svg';
-import SurfImg from '../../public/images/surf.svg';
+import CocktailImg from '../../public/images/Home/TravelTypes/cocktail.svg';
+import BuildingImg from '../../public/images/Home/TravelTypes/building.svg';
+import EarthImg from '../../public/images/Home/TravelTypes/earth.svg';
+import MuseumImg from '../../public/images/Home/TravelTypes/museum.svg';
+import SurfImg from '../../public/images/Home/TravelTypes/surf.svg';
 
 export function TravelTypes() {
   const [isLargerThan770] = useMediaQuery('(min-width: 770px)');

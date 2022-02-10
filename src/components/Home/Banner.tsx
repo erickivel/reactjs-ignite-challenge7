@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 
 
-import Background from '../../public/images/Background.png';
-import AirplaneImg from '../../public/images/Airplane.svg';
+import Background from '../../public/images/Home/Background.png';
+import AirplaneImg from '../../public/images/Home/Airplane.svg';
 
 export function Banner() {
 

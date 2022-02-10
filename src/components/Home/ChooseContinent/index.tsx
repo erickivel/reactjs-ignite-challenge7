@@ -8,12 +8,12 @@ import "swiper/css/navigation";
 import styles from './styles.module.css';
 
 import { ContinentCard } from "./ContinentCard";
-import NorthAmericaImg from '../../../public/images/NorthAmerica.jpg';
-import SouthAmericaImg from '../../../public/images/SouthAmerica.jpg';
-import AsiaImg from '../../../public/images/Asia.jpg';
-import AfricaImg from '../../../public/images/Africa.jpg';
-import EuropeImg from '../../../public/images/Europe.jpg';
-import OceaniaImg from '../../../public/images/Oceania.jpg';
+import NorthAmericaImg from '../../../public/images/Home/Continents/NorthAmerica.jpg';
+import SouthAmericaImg from '../../../public/images/Home/Continents/SouthAmerica.jpg';
+import AsiaImg from '../../../public/images/Home/Continents/Asia.jpg';
+import AfricaImg from '../../../public/images/Home/Continents/Africa.jpg';
+import EuropeImg from '../../../public/images/Home/Continents/Europe.jpg';
+import OceaniaImg from '../../../public/images/Home/Continents/Oceania.jpg';
 
 export function ChooseContinent() {
   const [isLargerThan770] = useMediaQuery('(min-width: 770px)');

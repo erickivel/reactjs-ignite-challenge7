@@ -2,8 +2,8 @@ import { Flex, Switch, useColorMode, useMediaQuery, IconButton, useBreakpointVal
 import { MoonIcon, SunIcon } from '@chakra-ui/icons';
 import Image from "next/image";
 
-import DarkLogo from '../../public/images/Dark-Logo.svg';
-import LightLogo from '../../public/images/Light-Logo.svg';
+import DarkLogo from '../../public/images/Header/Dark-Logo.svg';
+import LightLogo from '../../public/images/Header/Light-Logo.svg';
 
 export function Header() {
   const { colorMode, toggleColorMode } = useColorMode()

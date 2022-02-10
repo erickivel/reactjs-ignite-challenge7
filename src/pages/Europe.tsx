@@ -1,15 +1,27 @@
-import { Box, Flex, Heading, HStack, Text, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, SimpleGrid, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { Banner } from "../components/Continents/Banner";
+import { CityCard } from "../components/Continents/CityCard";
+import { Info } from "../components/Continents/Info";
 
 import { Header } from "../components/Home/Header"
 
-import EuropeImg from '../public/images/EuropeContinent.jpg';
+import GreatBritainImg from "../public/images/Europe/GreatBritainIcon.png";
+import LondonImg from "../public/images/Europe/London.png";
+import FranceImg from "../public/images/Europe/FranceIcon.png";
+import ParisImg from "../public/images/Europe/Paris.png";
+import ItalyImg from "../public/images/Europe/ItalyIcon.png";
+import RomeImg from "../public/images/Europe/Rome.png";
+import CzechRepublicImg from "../public/images/Europe/CzechRepublicIcon.png";
+import PragueImg from "../public/images/Europe/Prague.png";
+import NetherlandsImg from "../public/images/Europe/NetherlandsIcon.png";
+import AmsterdamImg from "../public/images/Europe/Amsterdam.png";
 
 export default function ContinentPage() {
   const [mounted, setMounted] = useState(false)
-  const textColor = useColorModeValue("gray.500", "gray.50");
+  const { colorMode } = useColorMode()
 
   useEffect(() => {
     setMounted(true)
@@ -19,53 +31,48 @@ export default function ContinentPage() {
     <>
       <Header />
 
-      <Flex direction="column" justify="flex-end" position="relative" height={500}>
-        <Box zIndex={-1} position="absolute" top="0" height={500} overflow="hidden" filter="brightness(0.7)" >
-          <Image
-            src={EuropeImg}
-            alt="Europa"
-            layout="intrinsic"
+      <Banner />
+
+      <Box maxW={1160} w="100%" mx="auto" mb="5rem">
+        <Info />
+
+        <Text mt="5rem" fontSize="4xl" fontWeight="medium" color={colorMode === 'dark' ? "gray.50" : "gray.500"}>Cidades +100</Text>
+
+        <SimpleGrid mt="2.5rem" columns={2} templateColumns="repeat(4, 256px)" minChildWidth="256px" spacing="2.8rem">
+          <CityCard
+            cityName="Londres"
+            countryName="Reino Unido"
+            cityImage={LondonImg}
+            countryIcon={GreatBritainImg}
           />
-        </Box>
 
-        <Box maxW={1160} zIndex={1} w="100%" mx="auto">
-          <Text
-            mb="3.7rem"
-            fontSize="5xl"
-            fontWeight="semibold"
-            color="gray.50"
-          >
-            Europa
-          </Text>
-        </Box>
-      </Flex >
+          <CityCard
+            cityName="Paris"
+            countryName="França"
+            cityImage={ParisImg}
+            countryIcon={FranceImg}
+          />
 
-      <Flex mt="5rem" maxW={1160} width="100%" mx="auto" justify="space-between" align="center">
-        <Box maxW={600} w="100%">
-          <Text
-            textAlign="justify"
-            fontSize="2xl"
-            fontWeight="medium"
-            color={textColor}
-          >
-            A Europa é, por convenção, um dos seis continentes do mundo. Compreendendo a península ocidental da Eurásia, a Europa geralmente divide-se da Ásia a leste pela divisória de águas dos montes Urais, o rio Ural, o mar Cáspio, o Cáucaso, e o mar Negro a sudeste
-          </Text>
-        </Box>
-        <HStack spacing={10}>
-          <Flex direction="column" align="center" justify="center">
-            <Text fontSize="5xl" fontWeight="semibold" color="yellow.500">50</Text>
-            <Text fontSize="2xl" fontWeight="semibold" color={textColor}>países</Text>
-          </Flex>
-          <Flex direction="column" align="center" justify="center">
-            <Text fontSize="5xl" fontWeight="semibold" color="yellow.500">60</Text>
-            <Text fontSize="2xl" fontWeight="semibold" color={textColor}>línguas</Text>
-          </Flex>
-          <Flex direction="column" align="center" justify="center">
-            <Text fontSize="5xl" fontWeight="semibold" color="yellow.500">27</Text>
-            <Text fontSize="2xl" fontWeight="semibold" color={textColor}>cidades +100</Text>
-          </Flex>
-        </HStack>
-      </Flex>
+          <CityCard
+            cityName="Roma"
+            countryName="Itália"
+            cityImage={RomeImg}
+            countryIcon={ItalyImg}
+          />
+          <CityCard
+            cityName="Praga"
+            countryName="República Tcheca"
+            cityImage={PragueImg}
+            countryIcon={CzechRepublicImg}
+          />
+          <CityCard
+            cityName="Amsterdã"
+            countryName="Holanda"
+            cityImage={AmsterdamImg}
+            countryIcon={NetherlandsImg}
+          />
+        </SimpleGrid>
+      </Box>
     </>
   ) : null;
 }
