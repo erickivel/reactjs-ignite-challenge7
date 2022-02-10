@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, HStack, SimpleGrid, Text, useColorMode, useColorModeValue } from "@chakra-ui/react";
+import { Box, Flex, Heading, HStack, SimpleGrid, Text, useColorMode, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
@@ -23,9 +23,13 @@ export default function ContinentPage() {
   const [mounted, setMounted] = useState(false)
   const { colorMode } = useColorMode()
 
+  const [isLargerThan1160] = useMediaQuery('(min-width: 1160px)');
+
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // templateColumns="repeat(4, 256px)"
 
   return mounted ? (
     <>
@@ -33,12 +37,12 @@ export default function ContinentPage() {
 
       <Banner />
 
-      <Box maxW={1160} w="100%" mx="auto" mb="5rem">
+      <Box maxW={1160} w="100%" mx={"auto"} mb="5rem">
         <Info />
 
         <Text mt="5rem" fontSize="4xl" fontWeight="medium" color={colorMode === 'dark' ? "gray.50" : "gray.500"}>Cidades +100</Text>
 
-        <SimpleGrid mt="2.5rem" columns={2} templateColumns="repeat(4, 256px)" minChildWidth="256px" spacing="2.8rem">
+        <SimpleGrid mt="2.5rem" minChildWidth="256px" spacing="2.8rem">
           <CityCard
             cityName="Londres"
             countryName="Reino Unido"

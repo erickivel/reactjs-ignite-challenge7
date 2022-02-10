@@ -7,12 +7,6 @@ import Background from '../../public/images/Home/Background.png';
 import AirplaneImg from '../../public/images/Home/Airplane.svg';
 
 export function Banner() {
-
-
-
-
-
-
   const isLargerThan990 = useBreakpointValue({
     base: false,
     lg: true

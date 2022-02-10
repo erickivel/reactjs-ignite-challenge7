@@ -1,11 +1,12 @@
-import { Box, Flex, HStack, Text, useColorModeValue, Tooltip } from "@chakra-ui/react";
+import { Box, Flex, HStack, Text, useColorModeValue, Tooltip, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 import { InfoOutlineIcon } from "@chakra-ui/icons"
 
 export function Info() {
   const textColor = useColorModeValue("gray.500", "gray.50");
+  const [isLargerThan1090] = useMediaQuery('(min-width: 1090px)');
 
   return (
-    <Flex mt="5rem" maxW={1160} width="100%" mx="auto" justify="space-between" align="center">
+    <Flex mt="5rem" direction={isLargerThan1090 ? 'row' : 'column'} maxW={1160} width="100%" mx="auto" justify="space-between" align="center">
       <Box maxW={600} w="100%">
         <Text
           textAlign="justify"
