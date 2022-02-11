@@ -1,11 +1,16 @@
-import { Flex, Switch, useColorMode, useMediaQuery, IconButton, useBreakpointValue } from "@chakra-ui/react";
-import { MoonIcon, SunIcon } from '@chakra-ui/icons';
+import { Flex, Switch, useColorMode, IconButton, useBreakpointValue } from "@chakra-ui/react";
+import { MoonIcon, SunIcon, ChevronLeftIcon } from '@chakra-ui/icons';
 import Image from "next/image";
 
 import DarkLogo from '../../public/images/Header/Dark-Logo.svg';
 import LightLogo from '../../public/images/Header/Light-Logo.svg';
+import Router from "next/router";
+import Link from "next/link";
 
 export function Header() {
+
+  const isBackButtonAvailable = Router.asPath !== "/";
+
   const { colorMode, toggleColorMode } = useColorMode()
   const isLargeThemeChangeButton = useBreakpointValue({
     base: false,
@@ -14,6 +19,13 @@ export function Header() {
 
   return (
     <Flex maxWidth={1160} height={100} mx="auto" justify='center' align='center' position="relative">
+      {isBackButtonAvailable && (
+        <Link href="/" passHref>
+          <Flex as="a" align="center" position="absolute" left="1rem">
+            <ChevronLeftIcon w={10} h={10} />
+          </Flex>
+        </Link>
+      )}
       <Flex>
         <Image src={colorMode === 'dark' ? DarkLogo : LightLogo} alt="World Trip" layout="fixed" />
       </Flex>

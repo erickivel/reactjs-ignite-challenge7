@@ -24,12 +24,11 @@ export default function ContinentPage() {
   const { colorMode } = useColorMode()
 
   const [isLargerThan1160] = useMediaQuery('(min-width: 1160px)');
+  const [isLargerThan560] = useMediaQuery('(min-width: 600px)');
 
   useEffect(() => {
     setMounted(true)
   }, [])
-
-  // templateColumns="repeat(4, 256px)"
 
   return mounted ? (
     <>
@@ -37,45 +36,52 @@ export default function ContinentPage() {
 
       <Banner />
 
-      <Box maxW={1160} w="100%" mx={"auto"} mb="5rem">
+      <Box
+        maxW={1160}
+        w="100%"
+        mx="auto"
+        mb="5rem"
+      >
         <Info />
 
-        <Text mt="5rem" fontSize="4xl" fontWeight="medium" color={colorMode === 'dark' ? "gray.50" : "gray.500"}>Cidades +100</Text>
+        <Text mt="5rem" ml={isLargerThan1160 ? "0" : "2rem"} fontSize="4xl" fontWeight="medium" color={colorMode === 'dark' ? "gray.50" : "gray.500"}>Cidades +100</Text>
 
-        <SimpleGrid mt="2.5rem" minChildWidth="256px" spacing="2.8rem">
-          <CityCard
-            cityName="Londres"
-            countryName="Reino Unido"
-            cityImage={LondonImg}
-            countryIcon={GreatBritainImg}
-          />
+        <Flex direction={isLargerThan560 ? "column" : "row"} justify={isLargerThan560 ? "left" : "center"} width="100%">
+          <SimpleGrid ml={isLargerThan1160 ? "0" : "2rem"} mt="2.5rem" minChildWidth="256px" spacing="2.8rem">
+            <CityCard
+              cityName="Londres"
+              countryName="Reino Unido"
+              cityImage={LondonImg}
+              countryIcon={GreatBritainImg}
+            />
 
-          <CityCard
-            cityName="Paris"
-            countryName="França"
-            cityImage={ParisImg}
-            countryIcon={FranceImg}
-          />
+            <CityCard
+              cityName="Paris"
+              countryName="França"
+              cityImage={ParisImg}
+              countryIcon={FranceImg}
+            />
 
-          <CityCard
-            cityName="Roma"
-            countryName="Itália"
-            cityImage={RomeImg}
-            countryIcon={ItalyImg}
-          />
-          <CityCard
-            cityName="Praga"
-            countryName="República Tcheca"
-            cityImage={PragueImg}
-            countryIcon={CzechRepublicImg}
-          />
-          <CityCard
-            cityName="Amsterdã"
-            countryName="Holanda"
-            cityImage={AmsterdamImg}
-            countryIcon={NetherlandsImg}
-          />
-        </SimpleGrid>
+            <CityCard
+              cityName="Roma"
+              countryName="Itália"
+              cityImage={RomeImg}
+              countryIcon={ItalyImg}
+            />
+            <CityCard
+              cityName="Praga"
+              countryName="República Tcheca"
+              cityImage={PragueImg}
+              countryIcon={CzechRepublicImg}
+            />
+            <CityCard
+              cityName="Amsterdã"
+              countryName="Holanda"
+              cityImage={AmsterdamImg}
+              countryIcon={NetherlandsImg}
+            />
+          </SimpleGrid>
+        </Flex>
       </Box>
     </>
   ) : null;

@@ -37,7 +37,7 @@ export function ContinentCard({
 
   return (
     <Link href={`/${link}`} passHref>
-      <Box position="relative">
+      <Box as="a" position="relative">
         <Flex
           w="100%"
           h="100%"
