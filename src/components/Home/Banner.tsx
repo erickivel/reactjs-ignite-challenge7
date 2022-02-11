@@ -1,7 +1,5 @@
-import { Box, Button, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
-import { useEffect, useState } from "react";
 import Image from "next/image";
-
+import { Box, Flex, Text, useBreakpointValue } from "@chakra-ui/react";
 
 import Background from '../../public/images/Home/Background.png';
 import AirplaneImg from '../../public/images/Home/Airplane.svg';

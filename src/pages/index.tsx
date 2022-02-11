@@ -1,9 +1,8 @@
-import { Box, Flex, Text, useColorModeValue, useMediaQuery } from "@chakra-ui/react"
 import { useEffect, useState } from "react";
+import { Box, Flex, Text, useColorModeValue, useMediaQuery } from "@chakra-ui/react"
 
 import { Banner } from "../components/Home/Banner";
 import { ChooseContinent } from "../components/Home/ChooseContinent";
-
 import { Header } from "../components/Home/Header"
 import { TravelTypes } from "../components/Home/TravelTypes";
 

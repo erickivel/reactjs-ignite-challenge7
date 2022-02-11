@@ -1,10 +1,11 @@
+import { Box, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
-import { Box, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+
 import styles from './styles.module.css';
 
 import { ContinentCard } from "./ContinentCard";

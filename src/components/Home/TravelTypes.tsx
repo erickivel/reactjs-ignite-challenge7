@@ -1,6 +1,5 @@
-import { Box, Flex, Text, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
-import { mode } from '@chakra-ui/theme-tools';
+import { Box, Flex, Text, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
 
 import CocktailImg from '../../public/images/Home/TravelTypes/cocktail.svg';
 import BuildingImg from '../../public/images/Home/TravelTypes/building.svg';

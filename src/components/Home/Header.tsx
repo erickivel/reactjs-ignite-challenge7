@@ -1,14 +1,13 @@
+import Router from "next/router";
+import Image from "next/image";
+import Link from "next/link";
 import { Flex, Switch, useColorMode, IconButton, useBreakpointValue } from "@chakra-ui/react";
 import { MoonIcon, SunIcon, ChevronLeftIcon } from '@chakra-ui/icons';
-import Image from "next/image";
 
 import DarkLogo from '../../public/images/Header/Dark-Logo.svg';
 import LightLogo from '../../public/images/Header/Light-Logo.svg';
-import Router from "next/router";
-import Link from "next/link";
 
 export function Header() {
-
   const isBackButtonAvailable = Router.asPath !== "/";
 
   const { colorMode, toggleColorMode } = useColorMode()

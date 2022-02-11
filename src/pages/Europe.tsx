@@ -1,6 +1,4 @@
-import { Box, Flex, Heading, HStack, SimpleGrid, Text, useColorMode, useColorModeValue, useMediaQuery } from "@chakra-ui/react";
-import Image from "next/image"
-import { useRouter } from "next/router"
+import { Box, Flex, SimpleGrid, Text, useColorMode, useMediaQuery } from "@chakra-ui/react";
 import { useEffect, useState } from "react"
 import { Banner } from "../components/Continents/Banner";
 import { CityCard } from "../components/Continents/CityCard";
@@ -21,14 +19,16 @@ import AmsterdamImg from "../public/images/Europe/Amsterdam.png";
 
 export default function ContinentPage() {
   const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
   const { colorMode } = useColorMode()
 
   const [isLargerThan1160] = useMediaQuery('(min-width: 1160px)');
   const [isLargerThan560] = useMediaQuery('(min-width: 600px)');
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
 
   return mounted ? (
     <>

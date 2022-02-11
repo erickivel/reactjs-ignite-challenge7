@@ -1,6 +1,6 @@
-import { Box, Flex, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { Box, Flex, Text, useBreakpointValue, useMediaQuery } from "@chakra-ui/react";
 
 interface ContinentCardProps {
   continentName: string;

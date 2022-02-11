@@ -1,5 +1,5 @@
-import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 import Image from "next/image";
+import { Box, Flex, Stack, Text } from "@chakra-ui/react";
 
 interface CityCardProps {
   cityName: string;

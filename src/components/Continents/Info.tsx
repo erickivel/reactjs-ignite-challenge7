@@ -3,6 +3,7 @@ import { InfoOutlineIcon } from "@chakra-ui/icons"
 
 export function Info() {
   const textColor = useColorModeValue("gray.500", "gray.50");
+
   const [isLargerThan1090] = useMediaQuery('(min-width: 1090px)');
   const [isLargerThan632] = useMediaQuery('(min-width: 632px)');
   const [isLargerThan440] = useMediaQuery('(min-width: 440px)');

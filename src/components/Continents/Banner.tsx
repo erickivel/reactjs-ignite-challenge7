@@ -1,5 +1,5 @@
-import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 import Image from "next/image";
+import { Box, Flex, Text, useMediaQuery } from "@chakra-ui/react";
 
 import EuropeImg from '../../public/images/Europe/EuropeContinent.jpg';
 
